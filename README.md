@@ -1,73 +1,84 @@
-Python Port Scanner
+# Python Port Scanner
 
-This is a simple TCP port scanner that I built using Python.
-It scans a target IP address and checks which ports are open in a given range.
-I made this project to understand how port scanning actually works instead of only using tools like Nmap.
-___________________________________________________________________________
+A Python project I built to understand how basic TCP port scanning works using sockets instead of relying only on tools like Nmap.
 
-What This Project Does
+The goal was to learn how open ports are discovered and practice networking concepts through a small security tool.
 
-- Takes a target IP as input
-- Scans ports in a selected range
-- Uses multi-threading to scan faster
-- Shows which ports are open
-- Displays total open ports at the end
-___________________________________________________________________________
+## Why I Built This
+I wanted hands-on understanding of:
+- TCP connections
+- Open vs closed ports
+- Python socket programming
+- Basic multithreading
 
-Why I Built This
+## Features
+- Scan a target IP address
+- Custom port range support
+- Multithreaded scanning
+- Detect open ports
+- Shows scan summary at the end
 
-- As a cybersecurity student, I wanted to understand:
-- How TCP connections work
-- How open and closed ports are detected
-- How the socket module works
-- How threading improves performance
-- This project helped me understand networking concepts in a practical way.
-___________________________________________________________________________
+## Usage
 
-Technologies Used
+Basic scan:
 
-- Python
-- socket
-- threading
-- argparse
-- How To Run
-- Basic scan:
-- Copy code
-___________________________________________________________________________
-
-How to Run
-
-Basic scan
+```bash
 python scanner.py 127.0.0.1
+```
 
-Custom port range:
+Custom range:
+
+```bash
 python scanner.py 127.0.0.1 -s 1 -e 100
+```
 
-With timeout:
+Custom timeout:
+
+```bash
 python scanner.py 127.0.0.1 -s 1 -e 100 -t 0.5
+```
 
-___________________________________________________________________________
-Sample Output
-___________________________________________________________________________
+## Sample Output
 
-Target        : 127.0.0.1
-Port Range    : 1 - 100
-Timeout       : 1.0 seconds
+```text
+Target : 127.0.0.1
+Port Range : 1-100
 
-___________________________________________________________________________
 [OPEN] Port 22
 [OPEN] Port 80
-___________________________________________________________________________
+
 Total Open Ports: 2
-Open Ports: 22, 80
-___________________________________________________________________________
+```
 
-What I Learned From This Project
+## Screenshots
 
-- Basics of TCP communication
-- How connect_ex() works
-- Error handling in network programs
-- Using command-line arguments
-- Writing a simple security tool
+![Scan Demo](screenshots/demo1.png)
 
+![Results](screenshots/demo2.png)
 
+## Project Structure
+
+```text
+python-port-scanner/
+├── scanner.py
+├── screenshots/
+├── README.md
+└── requirements.txt
+```
+
+## What I Learned
+This project helped me understand:
+- Socket programming basics
+- TCP connect scanning
+- Multithreading in Python
+- Basic network enumeration
+
+## Future Improvements
+Things I may add later:
+- Banner grabbing
+- Service detection
+- Thread pool optimization
+- Simple UDP scan support
+
+## Disclaimer
+Built for learning and authorized network testing only.
